@@ -1,15 +1,15 @@
-# SOS Assuígnment 3 SOMs
+# SOS Assígnment 3 SOMs
 
 ## general notes
-Please download the requirement.txt to your venv
+Please download the requirement.txt to your venv./
 Remeber that it is:
 1. Go to your desired folder in zsh
 2. `python3 venv <your venv name>`
 3. `source <your venv name>/bin/activate`
 4. `pip install --upgrade pip`
-5. `pip install -r requirements.txt`
-if you download new packages while working, please type:
-- `python -m pip freeze > requirements.txt` and add it to the comit message that you updated it
+5. `pip install -r requirements.txt` /
+If you download new packages while working, please type:/
+- `python -m pip freeze > requirements.txt`/ and mention it in the comimt message that you updated it
 
 ## Notes for A
 ### Github Repo SOM Toolbox
@@ -25,4 +25,4 @@ Is in "TemplateNotebookProvenanceDoc.ipynb"
 
 ### Ontologies
 Ontoloigies are established in "OntholoogyEstablishing.ipynb"
-Please do xxx to establosh yourself as the 
+Please do xxx to establish yourself as the 
