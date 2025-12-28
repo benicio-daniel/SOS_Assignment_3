@@ -34,3 +34,18 @@ For some reason in the notebook they used starvers.starvers, which is the engine
 
 *Important* If you do work in the notebook, please excecute the  the cell with the `excecuted_by` variable to your MA number so that the verse can log what you did.
 ## Notes for B (Dataset)
+
+The dataset needs atleast following requirements:
+- 1000 instances
+- 20 features 
+- 4 classes\
+I have chosen a [dataset on traffic accidents](https://www.openml.org/search?type=data&sort=nr_of_downloads&status=active&qualities.NumberOfInstances=between_1000_10000&qualities.NumberOfFeatures=between_10_100&qualities.NumberOfClasses=gte_2&id=40672)\
+It has
+- 100968 instances
+- 30 features
+- 8 classes
+It is in arff format, whic is similar to csv that can be opened with\
+`dataset = arff.load(open('mydataset.arff', 'rb'))`
+
+
+## I will stop work until starverse is sorted out
