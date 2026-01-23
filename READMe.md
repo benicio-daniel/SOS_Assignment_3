@@ -78,6 +78,8 @@ executed_by = 'stud-id_XXXXXXXX'
 
 ## Notes for B (Dataset)
 
+Fars: https://www.openml.org/d/40672
+
 The dataset needs to meet the following requirements:
 - 1000 instances
 - 20 features 
