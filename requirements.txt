@@ -132,3 +132,4 @@ panel==1.4.4
 holoviews==1.19.1
 bokeh==3.4.3
 scikit-image==0.24.0
+jupyter_bokeh==4.0.5
