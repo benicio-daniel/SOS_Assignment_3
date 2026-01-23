@@ -34,12 +34,12 @@ from visualizations.clustering import Clustering
 from visualizations.metromap import MetroMap
 from visualizations.piechart import PieChart
 from visualizations.chessboard import Chessboard
-from visualizations.time_series import TimeSeries
+# from visualizations.time_series import TimeSeries # not needed for our exercise
 from skimage.transform import resize
 
 OBJECTS_CLASSES = [ComponentPlane, HitHist, UMatrix, DMatrix, UStar_PMatrix, 
                    SDH, PieChart, NeighbourhoodGraph, Chessboard, Clustering, 
-                   MetroMap, QError, TimeSeries]
+                   MetroMap, QError] #, TimeSeries]
 
 _COLOURS_93 = ['#FF5555','#5555FF','#55FF55','#FFFF55','#FF55FF','#55FFFF','#FFAFAF','#808080',
               '#C00000','#0000C0','#00C000','#C0C000','#C000C0','#00C0C0','#404040','#FF4040',
@@ -89,8 +89,8 @@ class SOMToolbox():
         self._pdmap = pn.Column(self._Image * self._Paths)
 
         self._controls = pn.Row()
-        self._timeseries = pn.Row()
-        self._mainview = pn.Column(pn.Column(self._mainp, pn.Row(self._pdmap, self._controls)), pn.Column(self._timeseries))
+        # self._timeseries = pn.Row()
+        self._mainview = pn.Column(pn.Column(self._mainp, pn.Row(self._pdmap, self._controls))) #, pn.Column(self._timeseries))
        
         self._visualizations.append(ComponentPlane(self))
         if input_data is not None: self._visualizations.append(HitHist(self))
@@ -105,7 +105,7 @@ class SOMToolbox():
             self._visualizations.append(Clustering(self))
             self._visualizations.append(MetroMap(self))
             self._visualizations.append(QError(self))
-            self._visualizations.append(TimeSeries(self))     
+            # self._visualizations.append(TimeSeries(self))     
 
         self._visualizations[0]._activate_controllers()
     
