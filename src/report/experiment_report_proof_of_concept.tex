@@ -1,0 +1,255 @@
+\documentclass[sigconf]{acmart}
+
+\AtBeginDocument{ \providecommand\BibTeX{ Bib\TeX } }
+\setcopyright{acmlicensed}
+\copyrightyear{2025}
+\acmYear{2026}
+\acmDOI{XXXXXXX.XXXXXXX}
+
+\acmConference[SOS 2025]{Self Organizing Systems}{-}{-}
+
+\begin{document}
+
+\title{ SOS2025 Experiment Report - Group 13}
+%% ---Authors: Dynamically added ---
+
+          \author{Benicio Daniel}
+          \authornote{Student A, Matr.Nr.: 12038369}
+          \affiliation{
+            \institution{TU Wien}
+            \country{Austria}
+          }
+          
+          \author{Philipp Schott}
+          \authornote{Student B, Matr.Nr.: 12132552}
+          \affiliation{
+            \institution{TU Wien}
+            \country{Austria}
+          }
+          
+
+\begin{abstract}
+  This report documents the machine learning experiment for Group 13, following the CRISP-DM process model.
+\end{abstract}
+
+\ccsdesc[500]{Computing methodologies~Machine learning}
+\keywords{CRISP-DM, Provenance, Knowledge Graph, Machine Learning}
+
+\maketitle
+
+%% --- 1. Business Understanding ---
+\section{Business Understanding}
+This project analyzes the given dataset to better understand its structure, quality, and suitability for subsequent modeling steps as part of the SOS assignment.
+
+%% --- 2. Data Understanding ---
+\section{Data Understanding}
+\textbf{Dataset Description:} 
+The dataset is provided in ARFF format and consists of approximately 100,000 person-level traffic accident records with 30 variables. 
+It contains a mixture of numerical attributes and a large number of categorical variables encoded as byte or object values. 
+The variable 'class' represents the target outcome. 
+Initial inspection indicates that decoding and categorical encoding will be required in the Data Preparation phase. 
+No data transformations were applied at this stage.
+
+%% --- 3. Data Preparation ---
+\section{Data Preparation}
+\subsection{Decoding of Categorical Attributes}
+Now since I understand the data after decoding the byte-encoded categorical variables, I can see that the dataset is ready for further analysis and modeling.
+In the next steps, I will explore the data distributions, check for missing values, and prepare the data for modeling.
+
+\subsection{Feature Encoding and Scaling}
+The dataset has been preprocessed for Self-Organizing Map (SOM) training.
+All features are convertet to the appropriate data types.
+Numeric features have been standardized using Z-score scaling, 
+while categorical features have been scaled using Min-Max scaling, because we assume uniform distribution for them.
+The target variable 'class' remains unchanged.
+
+This was done to make the data more suitable for SOM training, especially since SOMs are sensitive to the scale of input features.
+To summarize, the data is now ready for SOM training and further analysis.
+
+The resulting dataset has the shape (100968, 30) and contains no missing values.
+It has the following features: CASE\_STATE                              float64
+AGE                                     float64
+SEX                                     float64
+PERSON\_TYPE                             float64
+SEATING\_POSITION                        float64
+RESTRAINT\_SYSTEM-USE                    float64
+AIR\_BAG\_AVAILABILITY/DEPLOYMENT         float64
+EJECTION                                float64
+EJECTION\_PATH                           float64
+EXTRICATION                             float64
+NON\_MOTORIST\_LOCATION                   float64
+POLICE\_REPORTED\_ALCOHOL\_INVOLVEMENT     float64
+METHOD\_ALCOHOL\_DETERMINATION            float64
+ALCOHOL\_TEST\_TYPE                       float64
+ALCOHOL\_TEST\_RESULT                     float64
+POLICE-REPORTED\_DRUG\_INVOLVEMENT        float64
+METHOD\_OF\_DRUG\_DETERMINATION            float64
+DRUG\_TEST\_TYPE                          float64
+DRUG\_TEST\_RESULTS\_(1\_of\_3)              float64
+DRUG\_TEST\_TYPE\_(2\_of\_3)                 float64
+DRUG\_TEST\_RESULTS\_(2\_of\_3)              float64
+DRUG\_TEST\_TYPE\_(3\_of\_3)                 float64
+DRUG\_TEST\_RESULTS\_(3\_of\_3)              float64
+HISPANIC\_ORIGIN                         float64
+TAKEN\_TO\_HOSPITAL                       float64
+RELATED\_FACTOR\_(1)-PERSON\_LEVEL         float64
+RELATED\_FACTOR\_(2)-PERSON\_LEVEL         float64
+RELATED\_FACTOR\_(3)-PERSON\_LEVEL         float64
+RACE                                    float64
+class                                  category
+dtype: object.
+
+\bigskip
+
+The dataset has been preprocessed for Self-Organizing Map (SOM) training.
+All features are convertet to the appropriate data types.
+Numeric features have been standardized using Z-score scaling, 
+while categorical features have been scaled using Min-Max scaling, because we assume uniform distribution for them.
+The target variable 'class' remains unchanged.
+
+This was done to make the data more suitable for SOM training, especially since SOMs are sensitive to the scale of input features.
+To summarize, the data is now ready for SOM training and further analysis.
+
+The resulting dataset has the shape (100968, 30) and contains no missing values.
+It has the following features: Index(['CASE\_STATE', 'AGE', 'SEX', 'PERSON\_TYPE', 'SEATING\_POSITION',
+       'RESTRAINT\_SYSTEM-USE', 'AIR\_BAG\_AVAILABILITY/DEPLOYMENT', 'EJECTION',
+       'EJECTION\_PATH', 'EXTRICATION', 'NON\_MOTORIST\_LOCATION',
+       'POLICE\_REPORTED\_ALCOHOL\_INVOLVEMENT', 'METHOD\_ALCOHOL\_DETERMINATION',
+       'ALCOHOL\_TEST\_TYPE', 'ALCOHOL\_TEST\_RESULT',
+       'POLICE-REPORTED\_DRUG\_INVOLVEMENT', 'METHOD\_OF\_DRUG\_DETERMINATION',
+       'DRUG\_TEST\_TYPE', 'DRUG\_TEST\_RESULTS\_(1\_of\_3)',
+       'DRUG\_TEST\_TYPE\_(2\_of\_3)', 'DRUG\_TEST\_RESULTS\_(2\_of\_3)',
+       'DRUG\_TEST\_TYPE\_(3\_of\_3)', 'DRUG\_TEST\_RESULTS\_(3\_of\_3)',
+       'HISPANIC\_ORIGIN', 'TAKEN\_TO\_HOSPITAL',
+       'RELATED\_FACTOR\_(1)-PERSON\_LEVEL', 'RELATED\_FACTOR\_(2)-PERSON\_LEVEL',
+       'RELATED\_FACTOR\_(3)-PERSON\_LEVEL', 'RACE', 'class'],
+      dtype='object').
+
+\bigskip
+
+The dataset has been preprocessed for Self-Organizing Map (SOM) training.
+All features are convertet to the appropriate data types.
+Numeric features have been standardized using Z-score scaling, 
+while categorical features have been encoded using One-Hot Encoding.
+Earlier, categorical features were scaled using Min-Max scaling, but One-Hot Encoding is more appropriate to avoid imposing artificial ordinal relationships.
+The target variable 'class' remains unchanged.
+
+This was done to make the data more suitable for SOM training, especially since SOMs are sensitive to the scale of input features.
+To summarize, the data is now ready for SOM training and further analysis.
+
+The resulting dataset has the shape (100968, 363) and contains no missing values.
+It has the following features: Index(['AGE', 'ALCOHOL\_TEST\_RESULT', 'DRUG\_TEST\_RESULTS\_(1\_of\_3)',
+       'DRUG\_TEST\_RESULTS\_(2\_of\_3)', 'DRUG\_TEST\_RESULTS\_(3\_of\_3)', 'class',
+       'AIR\_BAG\_AVAILABILITY/DEPLOYMENT\_0.0',
+       'AIR\_BAG\_AVAILABILITY/DEPLOYMENT\_1.0',
+       'AIR\_BAG\_AVAILABILITY/DEPLOYMENT\_2.0',
+       'AIR\_BAG\_AVAILABILITY/DEPLOYMENT\_3.0',
+       ...
+       'SEATING\_POSITION\_22.0', 'SEATING\_POSITION\_23.0',
+       'SEATING\_POSITION\_24.0', 'SEATING\_POSITION\_25.0', 'SEX\_0', 'SEX\_1',
+       'SEX\_2', 'TAKEN\_TO\_HOSPITAL\_0', 'TAKEN\_TO\_HOSPITAL\_1',
+       'TAKEN\_TO\_HOSPITAL\_2'],
+      dtype='object', length=363).
+
+\bigskip
+
+The dataset has been preprocessed for Self-Organizing Map (SOM) training.
+All features are convertet to the appropriate data types after manually checking there interpretation.
+
+Numeric features have been standardized using StandardScaler(),
+ordinal features have been standardized using rank\_scale,
+while categorical features have been encoded using one\_hot\_encoder.
+The target variable 'class' remains unchanged.
+This was done to make the data more suitable for SOM training, especially since SOMs are sensitive to the scale of input features.
+
+Earlier, just a division into numeric and categorical features was used which resulted in 350+ features with StandardScaler(), which we felt was not suitable for SOMs.
+Therefore we introduced ordinal scale features to scale then using rank\_scale to simulatiously preserve order but reduce dimensionality.
+We also used Minimum-frequency category reduction which aggregates infrequent nominal categories into a shared "OTHER§ class, 
+reducing sparsity and noise while preserving the dominant categorical structure relevant for distance-based learning methods.
+
+This was done to make the data more suitable for SOM training, especially since SOMs are sensitive to the scale of input features.
+To summarize, the data is now ready for SOM training and further analysis.
+
+The resulting dataset using 0.01 as a frequency threshold has the shape (100968, 109) and contains no missing values.
+The resulting dataset using 0.001 as a frequency threshold has the shape (100968, 169) and contains no missing values.
+
+\bigskip
+
+The dataset was preprocessed to make it suitable for Self-Organizing Map (SOM) training,
+which is sensitive to feature scaling, sparsity, and distance geometry.
+All features are converted to the appropriate data types after manually checking their interpretation.
+
+Numeric features have been standardized using standard\_scaler (z-score),
+ordinal features have been standardized using rank\_scaler.
+Categorical attributes were first reduced using minimum-frequency thresholding to limit the
+number of rare categories and mitigate sparsity.
+
+Two alternative categorical encoding strategies were prepared:
+(1) classical one\_hot\_encoder, resulting in a sparse high-dimensional representation, and
+(2) simplex\_equdistant\_encoder encoding, producing dense representations in which all categories of a variable have equal pairwise distances.
+
+This design allows us to test the hypothesis that reducing sparsity and improving distance
+geometry in categorical encodings leads to more stable SOM training, lower quantization  error,
+and clearer cluster structures for datasets with many categorical attributes.
+
+Earlier, just a division into numeric and categorical features was used which resulted in 350+ features with standard\_scaler (z-score), which we felt was not suitable for SOMs.
+Therefore we introduced ordinal scale features to scale then using rank\_scaler to simulatiously preserve order but reduce dimensionality to avoid sparsity.
+We also used Minimum-frequency category reduction which aggregates infrequent nominal categories into a shared "OTHER§ class, 
+reducing sparsity and noise while preserving the dominant categorical structure relevant for distance-based learning methods.
+
+This was done to make the data more suitable for SOM training, especially since SOMs are sensitive to the scale of input features.
+To summarize, the data is now ready for SOM training and further analysis.
+
+Dataset variants were generated using frequency thresholds of 0.05, 0.01, and 0.001, and scaler one\_hot\_encoder and simplex\_equdistant\_encoder resulting in the following shapes:
+- 0.05: one\_hot\_encoder: (100968, 64)
+- 0.01: one\_hot\_encoder: (100968, 109)
+- 0.001: one\_hot\_encoder: (100968, 169)
+- 0.05: simplex\_equdistant\_encoder: (100968, 48)
+- 0.01: simplex\_equdistant\_encoder: (100968, 93)
+- 0.001: simplex\_equdistant\_encoder: (100968, 153)
+
+\bigskip
+
+Now since I understand the data after decoding the byte-encoded categorical variables, I can see that the dataset is ready for further analysis and modeling.
+In the next steps, I will explore the data distributions, check for missing values, and prepare the data for modeling.
+
+\textit{Note:} This section may be a bit chaotic but it represents our thought process during data preparation for SOM training.
+This represents the main steps we took to make the data suitable for SOMs which turned out to be not straightforward, 
+since we wanted to avoid sparsity in categorical encodings.
+
+%% --- 4. Modeling ---
+\section{Modeling}
+
+\subsection{Hyperparameter Configuration}
+The model was trained using the following hyperparameter settings:
+
+\begin{table}[h]
+  \caption{Hyperparameter Settings}
+  \label{tab:hyperparams}
+  \begin{tabular}{lp{0.4\linewidth}l}
+    \toprule
+    \textbf{Parameter} & \textbf{Description} & \textbf{Value} \\
+    \midrule
+    
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Training Run}
+A training run was executed with the following characteristics:
+\begin{itemize}
+    \item \textbf{Algorithm:} 
+    \item \textbf{Start Time:} 
+    \item \textbf{End Time:} 
+    \item \textbf{Result:}  = 
+\end{itemize}
+
+%% --- 5. Evaluation ---
+\section{Evaluation}
+
+%% --- 6. Deployment ---
+\section{Deployment}
+
+\section{Conclusion}
+
+\end{document}
