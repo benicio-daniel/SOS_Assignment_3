@@ -1,4 +1,5 @@
 /sos_venv
+/venv
 
 # Large generated datasets
 data/fars_scaled.csv
