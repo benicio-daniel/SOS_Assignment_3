@@ -219,23 +219,44 @@ since we wanted to avoid sparsity in categorical encodings.
 
 \section{C) SOM Training and Analysis}
 
-This part is added manually since we could not find a way to efficently automate the mapping of the panel visualizations into the ontology.
+\subsection{Final SOM Configuration}
+The final Self-Organizing Map was trained using the following configuration and execution setup.
 
-\subsection{Training Run}
-A training run was executed with the following characteristics:
-\begin{itemize}
-    \item \textbf{Algorithm:} 
-    \item \textbf{Start Time:} 
-    \item \textbf{End Time:} 
-    \item \textbf{Result:}  = 
-\end{itemize}
+\textbf{Algorithm:} Self-Organizing Map (SOM) \\ 
+\textbf{Training Start:} 2026-01-28 19:17:47 \\ 
+\textbf{Training End:} 2026-01-28 19:17:53
 
-%% --- 5. Evaluation ---
-\section{Evaluation}
+\subsection{Optimal Hyperparameters}
+The SOM was trained using the hyperparameters identified as optimal based on prior exploratory experiments.
 
-%% --- 6. Deployment ---
-\section{Deployment}
+\textbf{<https://starvers.ec.tuwien.ac.at/BI2025/13/N\_stratified>}: 2000\\\\
+\textbf{<https://starvers.ec.tuwien.ac.at/BI2025/13/iterations>}: 10000\\\\
+\textbf{<https://starvers.ec.tuwien.ac.at/BI2025/13/learningrate>}: 1\\\\
+\textbf{<https://starvers.ec.tuwien.ac.at/BI2025/13/percent>}: 5\\\\
+\textbf{<https://starvers.ec.tuwien.ac.at/BI2025/13/random\_state>}: 42\\\\
+\textbf{<https://starvers.ec.tuwien.ac.at/BI2025/13/ratio>}: 1.5\\\\
+\textbf{<https://starvers.ec.tuwien.ac.at/BI2025/13/sigma>}: 3\\\\
+\textbf{<https://starvers.ec.tuwien.ac.at/BI2025/13/size\_var>}: 1\\\\
 
-\section{Conclusion}
+
+\subsection{Model Quality Evaluation}
+To assess the quality of the trained SOM, standard SOM evaluation metrics were used.
+
+\textbf{Quantization Error}: 1.424343\\\\
+\textbf{Topographic Error}: 0.021032\\\\
+
+
+\subsection{Provenance Information}
+The following provenance information documents authorship and execution responsibility for the SOM training run.
+
+<https://starvers.ec.tuwien.ac.at/BI2025/13/stud-id\_12132552> (<https://starvers.ec.tuwien.ac.at/BI2025/13/code\_executor>)\\\\
+<https://starvers.ec.tuwien.ac.at/BI2025/13/stud-id\_12038369> (<https://starvers.ec.tuwien.ac.at/BI2025/13/code\_writer>)\\\\
+<https://starvers.ec.tuwien.ac.at/BI2025/13/stud-id\_12132552> (<https://starvers.ec.tuwien.ac.at/BI2025/13/code\_writer>)\\\\
+
+
+
+%% --- Additon ---
+\section{Addition}
+The other parts where added manually since we could not find a way to efficently automate the mapping of the panel visualizations into the ontology.
 
 \end{document}
